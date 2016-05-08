@@ -1,14 +1,20 @@
 fs = require('fs');
 
-var sys = require('sys')
-var exec = require('child_process').exec;
-function puts(error, stdout, stderr) { sys.puts(stdout) }
-exec("whoami",puts);
+var child = require("child_process");
+var name;
+child.exec("whoami", function (error, stdout, stderr) {
 
-fs.readdir("/home/"+ +"/Downloads", function (err, files) {
+  //stdout and stderr are available here
+  name = stdout;
+name = name.replace(/\r?\n|\r/g, "");
+
+fs.readdir("/home/"+name+"/Downloads", function (err, files) {
   if (err) {
     console.log(err);
     return;
   }
   console.log(files);
 });
+});
+
+
