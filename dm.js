@@ -1,6 +1,6 @@
 fs = require('fs');
 
-fs.readdir(process.cwd(), function (err, files) {
+fs.readdir("/home"+ +"/Downloads", function (err, files) {
   if (err) {
     console.log(err);
     return;
