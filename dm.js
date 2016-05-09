@@ -31,6 +31,7 @@ fs.readdir(downloadsFolder, function (err, files) {
 
           }
               //move.file.to.pathExt[i][0];
+              //hello
           }
       }
 
